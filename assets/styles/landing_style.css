@@ -230,7 +230,7 @@ header {
 }
 
 .btn {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     border: 1px solid var(--branco);
     border-radius: var(--radius-30);
 }
@@ -743,7 +743,7 @@ SECTION SERVIÇOS (04)
     }
 
     .h1 {
-        font-size: 2em;
+        font-size: 1.7em;
         max-width: 80%;
         text-align: center;
         margin-block: 20px;
@@ -794,7 +794,6 @@ SECTION SERVIÇOS (04)
         flex-flow: column nowrap;
         align-items: center;
         justify-content: center;
-        gap: 60px;
     }
 
     #footer>p {
@@ -809,7 +808,7 @@ SECTION SERVIÇOS (04)
         align-content: center;
         align-items: center;
         justify-content: space-between;
-        width: 75%;
+        width: 60%;
         gap: 20px;
     }
 
