@@ -44,7 +44,6 @@
    */
 
     --shadow-1: 0 0 5px #ffffff66;
-    ;
     --shadow-2: 0 0 20px 4px var(--black_5);
 
     /**
@@ -312,47 +311,66 @@ header {
 /* CARROSSEL */
 
 #carousel {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    margin-block-start: 60px;
-    width: 90%;
+    margin-block-start: 40px;
+    width: 100%;
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 300px;
 }
 
 .carousel_track {
     display: flex;
-    transition: transform .4s ease;
     gap: 1em;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    white-space: nowrap;
+    animation: scroll 15s linear infinite;
+    transition: transform .4s ease;
+    white-space: nowrap;
+    max-height: 100%;
+    width: max-content;
+}
+    
+.carousel_group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 100%;
 }
 
 .carrossel_item {
-    min-width: 33.33%;
-    height: 240px;
     text-align: center;
-    transition: all .4s ease-in-out;
+    transition: all .4s ease;
     transform: scale(0.9);
+    flex-shrink: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.carousel_track img:hover {transform: scale(1.05);}
 
 .item_carousel {
     width: 100%;
-    height: 240px;
+    height: 80%;
     border-radius: var(--radius-10);
     object-fit: cover;
-    /* flex: 0 0 364px; */
     border: 1px solid rgb(103, 103, 103);
-    /* transition: all .4s ease;
-    transform: scale(0.8); */
+    transition: all .4s ease;
+    flex-shrink: 0;
+    vertical-align: middle;
 }
 
-.destaque {
-    border: 1px solid rgb(103, 103, 103);
-    transform: scale(1.1);
-    z-index: 10;
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* 50% do trilho duplicado */
+  }
 }
 
 /* 
@@ -865,10 +883,15 @@ SECTION SERVIÇOS (04)
     }
 }
 
-
 /* TABLET */
 
+@media screen and (min-width: 763px) and (max-width: 935px){
+    #carousel {
+        display: none;
+    }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
-
-}
+    .items_infos:nth-child(2) {
+        border-right: none;
+        border-left: none;
+    }
+} 
